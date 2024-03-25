@@ -1,0 +1,213 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto&family=Truculenta:opsz@12..72&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css');
+
+:root {
+    --purple-1: #cbc1d9;
+    --purple-2: #78698c;
+    --purple-3 :#5f3c8c;
+    --purple-4 :#473859;
+    --purple-5 :#2d2933;    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(../assets/woman.jpg) no-repeat top center;
+    background-size: cover;    
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100vh;
+}
+
+header {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 1000px;
+    height: 600px;
+}
+
+.header-text {
+    display: flex;
+    align-items: center;
+}
+
+.header-text span{    
+    font-size: 200px;
+    font-style: italic;
+    color: var(--purple-3);
+}
+ 
+.header-text h1, .modal-content h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 48px;
+    color: var(--purple-3);
+} 
+
+.header-text h2 {
+    font-family: "Truculenta", sans-serif;    
+    color: var(--purple-2);
+} 
+
+.btn-msg {
+    background: var(--purple-2);
+    padding: 20px 40px;
+    border-radius: 40px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1pt;
+    color: var(--purple-1);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-msg:hover {
+    background: var(--purple-4);
+}
+
+/* Modal */
+.bg-modal {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .6);
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+.modal {
+    background-color: var(--purple-1);
+    width: 60%;
+    height: auto;
+    margin: 80px auto 0 auto;    
+    border-radius: 10px;
+
+    animation: entrance 1s ease 0s 1 normal forwards;
+}
+
+.modal-content {
+    padding: 30px;
+}
+
+.modal-content h2, p {
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin: 10px 0 30px;
+}
+
+.modal-content p {
+    padding: 20px 100px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    color: var(--purple-4);
+}
+
+.modal-content img {
+    position: relative;
+    height: 100px;
+}
+
+.modal-content #flower-bottom {    
+    left: calc(100% - 60px);
+}
+
+.modal a.btn-close-modal {
+    position: relative;   
+    top: 10px;    
+    left: calc(100% - 35px);
+}
+
+.material-icons {    
+    cursor: pointer;
+}
+
+.btn-close-modal .material-icons {
+    color: var(--purple-5);
+}
+
+.btn-close-modal .material-icons:hover {
+    color: var(--purple-3);
+}
+
+/* Media Screen <= 900px */
+@media screen and (max-width: 900px) {
+    body {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3), transparent), url("../assets/woman-1-1.jpg") no-repeat top center;
+        background-size: cover;
+    }
+
+    .modal {
+        width: 90%;
+    }
+
+    .header-text h2 {            
+        color: var(--purple-1);
+    } 
+
+    .modal-content p {
+        padding: 20px 0px;        
+    }    
+}
+
+/* Media Screen <= 430px */
+@media screen and (max-width: 430px) {    
+    .modal {
+        width: 90%;
+        margin: 10vh auto 0 auto;
+        overflow-y: scroll;
+    }
+
+    .modal-content h2 {
+        font-size: 40px;
+    }
+
+    .modal-content p {
+        padding: 20px 0px;
+        font-size: 20px;        
+    }
+
+    .modal-content img {       
+        height: 50px;
+    }
+
+    .modal-content #flower-bottom {    
+        left: calc(100% - 30px);
+    }
+}
+
+/* Media Screen <= 375px */
+@media screen and (max-width: 375px) {    
+    .modal {        
+        margin: 5vh auto 0 auto;        
+    }
+}
+
+/* Animations */
+@keyframes entrance {
+	0% {
+		opacity: 0;
+		transform: scale(0.6);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
